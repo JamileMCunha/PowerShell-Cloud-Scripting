@@ -1,1 +1,6 @@
 # PowerShell-Cloud-Scripting
+
+Scenario of CA
+
+You are the assistant to the Network Administrator for a networking consultancy company called CompuTech. Your company has recently been providing network consultancy services for DigiTech, a small audio electronics company that makes custom audio equipment for musicians and recording studios. DigiTech’s Irish office is located near a small fishing village on the southern coast of Ireland. 
+The Chief Information Officer of DigiTech wants your company to explore PowerShell script and Shell scripting on the Google Cloud Platform. You have been assigned with demonstrated that you can rapidly provision a small Windows network that has a simple Domain controller and web server. Also, DigiTech is considering migrating their on-premise network operation to the Google Cloud Platform. The management at DigiTech would like to get a sample of some of the online business utility services that are available on the Google Cloud. They would like to get a feel for what their web site would look like hosted on the Google Cloud and wish to see Linux Apache web hosting platforms in use to provide Autoscaling for their web site during periods of high web site utilization.
