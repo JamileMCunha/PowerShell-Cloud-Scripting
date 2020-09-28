@@ -1,0 +1,18 @@
+Install-windowsfeature -name AD-Domain-Services –IncludeManagementTools
+Import-Module ADDSDeployment
+Install-ADDSForest
+-CreateDnsDelegation:$false
+-DatabasePath "C:\Windows\NTDS"
+-DomainMode "Win2016R2"
+-DomainName "digitech.cct"
+-DomainNetbiosName "digitech.cct"
+-ForestMode "Win2016R2"
+-InstallDns:$true
+-LogPath "C:\Windows\NTDS"
+-NoRebootOnCompletion:$false
+-SysvolPath "C:\Windows\SYSVOL"
+-Force:$true
+Restart-Computer
+
+# Windows PowerShell script for AD DS Deployment
+# Automates Active Directory installation for new Domain Controller 

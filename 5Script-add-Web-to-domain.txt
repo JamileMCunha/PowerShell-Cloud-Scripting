@@ -1,0 +1,2 @@
+# This script would be run on all cluster nodes to add each node to the Domain
+Add-Computer –domainname Digitech.cct -Credential administrator -restart –force

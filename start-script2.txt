@@ -1,0 +1,8 @@
+#!/bin/bash
+apt-get update -y
+apt-get install apache2 -y
+apt-get install php7.0 -y
+cd /var/www/html
+rm index.html
+gsutil cp gs://wonderful-bucket-2016333/index.html .
+gsutil -m cp -r gs://wonderful-bucket-2016333/imgs .

@@ -1,0 +1,7 @@
+# This is run on the Domain Controller which already has DNS installed
+# Creating a zone for the DigiTech.cct website
+
+Add-DnsServerPrimaryZone -Name "DigiTech.cct" -ReplicationScope "Forest" -PassThru
+
+# The next line is an A-record customized for web cluster address 172.16.0.200 
+Add-DnsServerResourceRecordA -Name "www" -ZoneName "DigiTech.cct" -AllowUpdateAny -IPv4Address "172.16.0.200" -TimeToLive 01:00:00

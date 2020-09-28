@@ -1,0 +1,16 @@
+$Octet = Read-Host -Prompt 'Input the last octet of IP address'
+New-NetIPAddress -InterfaceAlias "Ethernet" -AddressFamily IPv4 -IPAddress 172.16.0.$Octet -PrefixLength 16 -DefaultGateway 172.16.0.1
+$DNS = Read-Host -Prompt 'Input the last octet of DNS Server IP address'
+Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses 172.16.0.$DNS,8.8.8.8
+netsh advfirewall firewall set rule group=”network discovery” new enable=yes
+netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=yes
+$WUSettings = (New-Object -com "Microsoft.Update.AutoUpdate").Settings
+$WUSettings.NotificationLevel=2
+$WUSettings.save()
+$Server = Read-Host -Prompt 'Input your server  name'
+Rename-Computer -NewName $Server 
+DISM /online /Get-TargetEditions
+DISM /online /Set-Edition:ServerDatacenter /ProductKey:Y4TGP-NPTV9-HTC2H-7MGQ3-DV4TW /AcceptEula
+Restart-Computer
+
+# Sets IPs SNMs DFG(1) & DNSs for one NIC / set firewall rules / Auto Update / Rename PC & Activate 
